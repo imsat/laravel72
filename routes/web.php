@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Route::get('/', function (){
+////    return "Hello World";
+//    return view('home');
+//});
+//Route::get('/bitm', function (){
+////    return "Hello BITM";
+//    return view('welcome');
+//});
+
+Route::get('/', 'StudentController@index');
+
+//Route::get('/basis/bitm', function (){
+//    return "Hello basis BITM";
+//
+//});
+
+
