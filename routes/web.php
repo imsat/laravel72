@@ -25,6 +25,21 @@
 
 Route::get('/', 'StudentController@index');
 
+//Route::get('/new-one', 'StudentController@newOne');
+//Route::get('/new-two', 'StudentController@newTwo');
+
+//Route::get('/new-one',);
+
+Route::get('/gg', [
+    'uses' => 'StudentController@newOne',
+    'as' => 'new-one'
+]);
+
+Route::get('/ggg', [
+    'uses' => 'StudentController@newTwo',
+    'as' => 'new-two'
+]);
+
 //Route::get('/basis/bitm', function (){
 //    return "Hello basis BITM";
 //

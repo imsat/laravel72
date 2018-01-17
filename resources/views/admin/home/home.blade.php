@@ -1,0 +1,1 @@
+<h1>This is home blade file from view file</h1>
