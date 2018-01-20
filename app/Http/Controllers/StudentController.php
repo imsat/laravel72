@@ -6,10 +6,22 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+
+
     public function index(){
-//        retu0rn "Hello World Form Controller";
+//        return "Hello World Form Controller";
         $name = "Satyajit Mondal";
-        return view('demo', compact('name'));
+        $age = 23;
+//        return view('demo', compact('name','age'));
+
+//        return view('demo')
+//            ->with('n', $name)
+//            ->with('a', $age);
+
+        return view('demo',[
+            'n' => $name,
+            'a' =>$age
+        ]);
     }
     public function newOne(){
         return "Hello New One";
