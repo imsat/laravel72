@@ -26,7 +26,18 @@ Route::get('/single-product', [
     'uses' => 'BigStoreController@singleProduct',
     'as' => 'single'
     ]);
-
+Route::get('/category/add', [
+    'uses' => 'CategoryController@addCategory',
+    'as' => 'add-category'
+    ]);
+Route::get('/category/manage', [
+    'uses' => 'CategoryController@manageCategory',
+    'as' => 'manage-category'
+    ]);
+Route::post('/category/save', [
+    'uses' => 'CategoryController@saveCategory',
+    'as' => 'new-category'
+    ]);
 
 
 Auth::routes();
