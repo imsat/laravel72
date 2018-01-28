@@ -64,4 +64,5 @@ class CategoryController extends Controller
         $category->delete();
         return redirect('/category/manage')->with('message', 'Category Delete !!');
     }
+
 }

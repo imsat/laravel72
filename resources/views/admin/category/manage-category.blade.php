@@ -16,7 +16,7 @@
                             <th>SL No</th>
                             <th>Category Name</th>
                             <th>Category Description</th>
-                            <th> ublication Status</th>
+                            <th>publication Status</th>
                             <th>Action</th>
                         </tr>
                         @php($i=1)
