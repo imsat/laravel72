@@ -31,7 +31,7 @@ Route::get('/single-product', [
     'as' => 'single'
     ]);
 Route::get('/category/add', [
-    'uses' => 'CategoryController@addCategory',
+    'uses' => 'CategoryController@index',
     'as' => 'add-category'
     ]);
 Route::get('/category/manage', [
@@ -63,7 +63,7 @@ Route::get('/category/delete/{id}', [
     'as' => 'delete-category'
     ]);
 Route::get('/brand/add', [
-    'uses' => 'BrandController@addBrand',
+    'uses' => 'BrandController@index',
     'as' => 'add-brand'
     ]);
 Route::post('/brand/save', [
@@ -93,6 +93,18 @@ Route::post('/brand/update', [
 Route::get('/brand/delete/{id}', [
     'uses' => 'BrandController@deleteBrand',
     'as' => 'delete-brand'
+]);
+Route::get('/product/add', [
+    'uses' => 'ProductController@addProduct',
+    'as' => 'add-product'
+]);
+Route::post('/product/save', [
+    'uses' => 'ProductController@saveProduct',
+    'as' => 'new-product'
+]);
+Route::get('/product/manage', [
+    'uses' => 'ProductController@manageProduct',
+    'as' => 'manage-product'
 ]);
 
 

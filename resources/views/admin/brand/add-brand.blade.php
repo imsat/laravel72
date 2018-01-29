@@ -11,38 +11,41 @@
                 </div>
                 <div class="panel-body">
                     <h3 class="text-success text-center">{{Session::get('message')}}</h3>
-                    <form action="{{route('new-brand')}}" method="POST" class="form-horizontal">
-                        {{csrf_field()}}
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Brand Name</label>
+                    {{Form::open(['route'=>'new-brand', 'method'=> 'POST', 'class'=>'form-horizontal'])}}
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Brand Name</label>
 
-                            <div class="col-md-8">
-                                <input type="text" name="brand_name" class="form-control" placeholder="Brand Name"/>
-                            </div>
+                        <div class="col-md-8">
+                            <input type="text" name="brand_name" class="form-control" placeholder="Brand Name"/>
+                            <span class="text-danger">{{$errors->has('brand_name') ? $errors->first('brand_name') : ' '}}</span>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Brand Description</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Brand Description</label>
 
-                            <div class="col-md-8">
-                                <textarea name="brand_description" id="" cols="70" rows="10" placeholder="Brand Description"></textarea>
-                            </div>
+                        <div class="col-md-8">
+                            <textarea name="brand_description" id=""  placeholder="Brand Description" class="form-control"></textarea>
+                            <span class="text-danger">{{$errors->has('brand_description') ? $errors->first('brand_description') : ' '}}</span>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Publication Status</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Publication Status</label>
 
-                            <div class="col-md-8 radio">
-                                <label> <input type="radio" checked name="publication_status"  value="1"/>Published</label>
-                                <label> <input type="radio" name="publication_status"  value="0"/>Unpublished</label>
+                        <div class="col-md-8 radio">
+                            <label> <input type="radio" name="publication_status"  value="1"/>Published</label>
+                            <label> <input type="radio" name="publication_status"  value="0"/>Unpublished</label>
+                            <br>
+                            <span class="text-danger">{{$errors->has('publication_status') ? $errors->first('publication_status') : ' '}}</span>
 
-                            </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <input type="submit" name="btn" class="btn btn-success btn-block" value="Save Brand Info"/>
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <input type="submit" name="btn" class="btn btn-success btn-block" value="Save Brand Info"/>
                         </div>
+                    </div>
 
-                    </form>
+                    {{Form::close()}}
                 </div>
             </div>
         </div>

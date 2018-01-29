@@ -7,17 +7,24 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    public function addBrand(){
+    public function index(){
         return view('admin.brand.add-brand');
     }
 
     public function saveBrand(Request $request){
-        $brand = new Brand();
-        $brand->brand_name = $request->brand_name;
-        $brand->brand_description = $request->brand_description;
-        $brand->publication_status = $request->publication_status;
-        $brand->save();
-        return redirect('/brand/add')->with('message', 'Brand add Successfully');
+
+        $this->validate($request, [
+            'brand_name' => 'required|regex:/^[\pL\s\-]+$/u|min:2|max:20',
+            'brand_description' => 'required|min:5|max:50',
+            'publication_status' => 'required'
+        ]);
+
+//        $brand = new Brand();
+//        $brand->brand_name = $request->brand_name;
+//        $brand->brand_description = $request->brand_description;
+//        $brand->publication_status = $request->publication_status;
+//        $brand->save();
+//        return redirect('/brand/add')->with('message', 'Brand add Successfully');
     }
     public function manageBrand(){
         $brands = Brand::all();
