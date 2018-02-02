@@ -106,9 +106,29 @@ Route::get('/product/manage', [
     'uses' => 'ProductController@manageProduct',
     'as' => 'manage-product'
 ]);
-Route::get('/product/{id}', [
+Route::get('/product/view/{id}', [
     'uses' => 'ProductController@viewProductDetails',
     'as' => 'view-product'
+]);
+Route::get('/product/unpublished/{id}', [
+    'uses' => 'ProductController@unpublishedProduct',
+    'as' => 'unpublished-product'
+]);
+Route::get('/product/published/{id}', [
+    'uses' => 'ProductController@publishedProduct',
+    'as' => 'published-product'
+]);
+Route::get('/product/edit/{id}', [
+    'uses' => 'ProductController@editProduct',
+    'as' => 'edit-product'
+]);
+Route::post('/product/update', [
+    'uses' => 'ProductController@updateProduct',
+    'as' => 'update-product'
+]);
+Route::get('/product/delete/{id}', [
+    'uses' => 'ProductController@deleteProduct',
+    'as' => 'delete-product'
 ]);
 
 

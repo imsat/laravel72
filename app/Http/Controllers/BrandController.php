@@ -58,7 +58,6 @@ class BrandController extends Controller
     public function deleteBrand($id){
     $brand = Brand::find($id);
     $brand->delete();
-    $brand->save;
     return redirect('/brand/manage')->with('message', 'Brand Deleted Successfully');
     }
 }

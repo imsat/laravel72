@@ -11,144 +11,43 @@
                 </div>
                 <div class="panel-body">
                     <h3 class="text-success text-center">{{Session::get('message')}}</h3>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered text-center">
                         <tr>
                             <th>Product Id</th>
-                            <td>{{$product->id}}</td>
+                            <td>{{$products->id}}</td>
                         </tr>
                         <tr>
                             <th>Product Name</th>
-                            <td>{{$product->product_name}}</td>
+                            <td>{{$products->product_name}}</td>
                         </tr>
                         <tr>
                             <th>Category Name</th>
-                            <td></td>
+                            <td>{{$products->category_id}}</td>
                         </tr>
                         <tr>
                             <th>Brand name</th>
-                            <td></td>
+                            <td>{{$products->brand_id}}</td>
                         </tr>
                         <tr>
                             <th>Product Price</th>
-                            <td></td>
+                            <td>{{$products->product_price}}</td>
                         </tr>
                         <tr>
                             <th>Product Quantity</th>
-                            <td></td>
+                            <td>{{$products->product_quantity}}</td>
+                        </tr>
+                        <tr>
+                            <th>Product Image</th>
+                            <td><img src="{{asset($products->product_image)}}" alt="Product Image" height="200" width="200"></td>
                         </tr>
                         <tr>
                             <th>Short Description</th>
-                            <td></td>
+                            <td>{{$products->short_description}}</td>
                         </tr>
                         <tr>
                             <th>Long Description</th>
-                            <td></td>
+                            <td>{{$products->long_description}}</td>
                         </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-
                     </table>
 
                 </div>
