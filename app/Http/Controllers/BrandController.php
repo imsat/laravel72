@@ -19,12 +19,12 @@ class BrandController extends Controller
             'publication_status' => 'required'
         ]);
 
-//        $brand = new Brand();
-//        $brand->brand_name = $request->brand_name;
-//        $brand->brand_description = $request->brand_description;
-//        $brand->publication_status = $request->publication_status;
-//        $brand->save();
-//        return redirect('/brand/add')->with('message', 'Brand add Successfully');
+        $brand = new Brand();
+        $brand->brand_name = $request->brand_name;
+        $brand->brand_description = $request->brand_description;
+        $brand->publication_status = $request->publication_status;
+        $brand->save();
+        return redirect('/brand/add')->with('message', 'Brand add Successfully');
     }
     public function manageBrand(){
         $brands = Brand::all();

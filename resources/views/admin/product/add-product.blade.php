@@ -11,7 +11,7 @@
                 </div>
                 <div class="panel-body">
                     <h3 class="text-success text-center">{{Session::get('message')}}</h3>
-                    <form action="{{route('new-product')}}" method="POST" class="form-horizontal">
+                    <form action="{{route('new-product')}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">
 
@@ -21,9 +21,9 @@
 
                                 <select name="category_id" id="" class="name form-control">
                                     <option value="">---Select Category---</option>
-                                    <option value="">Category1</option>
-                                    <option value="">Category2</option>
-                                    <option value="">Category3</option>
+                                    @foreach($categories as $categorie)
+                                    <option value="{{$categorie->id}}">{{$categorie->category_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -35,9 +35,9 @@
 
                                 <select name="brand_id" id="" class="name form-control">
                                     <option value="">---Select Brand---</option>
-                                    <option value="">Brand1</option>
-                                    <option value="">Brand2</option>
-                                    <option value="">Brand3</option>
+                                    @foreach($brands as $brand)
+                                    <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -46,6 +46,7 @@
 
                             <div class="col-md-8">
                                 <input type="text" name="product_name" class="form-control" placeholder="Product Name"/>
+                                <span class="text-danger">{{$errors->has('product_name') ? $errors->first('product_name') : ' '}}</span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -74,7 +75,7 @@
                             <label class="control-label col-md-4">Long Description</label>
 
                             <div class="col-md-8">
-                            <textarea name="long_description" placeholder="Long Description" class="form-control" id="editor"></textarea>0
+                            <textarea name="long_description" placeholder="Long Description" class="form-control" id="editor"></textarea>
                             </div>
                         </div>
 

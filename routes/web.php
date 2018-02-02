@@ -95,7 +95,7 @@ Route::get('/brand/delete/{id}', [
     'as' => 'delete-brand'
 ]);
 Route::get('/product/add', [
-    'uses' => 'ProductController@addProduct',
+    'uses' => 'ProductController@index',
     'as' => 'add-product'
 ]);
 Route::post('/product/save', [
@@ -105,6 +105,10 @@ Route::post('/product/save', [
 Route::get('/product/manage', [
     'uses' => 'ProductController@manageProduct',
     'as' => 'manage-product'
+]);
+Route::get('/product/{id}', [
+    'uses' => 'ProductController@viewProductDetails',
+    'as' => 'view-product'
 ]);
 
 
